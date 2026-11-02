@@ -1,83 +1,176 @@
-<html class="scroll-smooth">
+<!doctype html>
+<html lang="zh-Hant">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <meta content="LeoYu's Website" name="title" />
-    <meta content="Persinal Websute From LeoYu" name="description" />
-    <meta content="https://leoyu0607.github.io/" name="url" />
-    <meta content="https://leoyu0607.github.io/images/leoyu_icon.png" property="image" />
-    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-    <link href="./dist/output.css" rel="stylesheet">
-    <title> LeoYu's Website </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>游博丞 Leo Yu</title>
+  <meta name="description" content="游博丞（Leo Yu），Ai3 高級系統工程師。維運客服中心的 SIP 語音系統，也用 Rust 寫壓測與傳真工具。">
+  <meta property="og:title" content="游博丞 Leo Yu">
+  <meta property="og:description" content="Ai3 高級系統工程師。SIP 語音系統維運與工具開發。">
+  <meta property="og:image" content="https://leoyu0607.github.io/images/avatar.png">
+  <meta property="og:url" content="https://leoyu0607.github.io/">
+  <meta name="theme-color" content="#F1F3F5">
+  <link rel="icon" href="./images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="flex">
-        <div class="relative bg-cover bg-[url('https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')] w-screen h-screen">
-            <div class="absolute w-full h-screen bg-black bg-opacity-50">
-                <div class="absolute left-32 top-1/2 w-fit text-center -translate-y-1/2">
-                    <img src="./images/leoyu_icon.png" class="w-auto h-[200px] mx-auto mb-10 rounded">
-                    <p class="py-2 text-white text-6xl"> Hi, I'm Leo </p>
-                    <p class="py-2 text-white text-3xl"> NTUE CS 109 </p>
-                    <p class="py-2 text-white text-3xl"> 在資工苦海努力打滾 </p>
-                </div>
-            </div>
+  <header class="top">
+    <a class="top-name" href="#">
+      <img src="./images/avatar.png" alt="" width="32" height="32">
+      Leo Yu
+    </a>
+    <nav aria-label="頁面導覽">
+      <a href="#work">專案</a>
+      <a href="#path">經歷</a>
+      <a href="#contact">聯絡</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>
+          <span class="name-zh">游博丞</span>
+          <span class="name-en">Leo Yu</span>
+        </h1>
+        <p class="lede">
+          Ai3 高級系統工程師。白天維運客服中心的 SIP 語音系統，遇到測不了、修不順的地方，就自己用 Rust 寫工具。</p>
+        <p class="hero-meta">台中人，國立臺北教育大學資訊科學系畢業。</p>
+      </div>
+
+      <figure class="ladder" aria-label="SIP 通話建立流程：你送出 INVITE，Leo 回覆 100 Trying、180 Ringing、200 OK，你再送 ACK，通話建立。">
+        <div class="ladder-ends" aria-hidden="true">
+          <span>你</span>
+          <span>leo@ai3.cloud</span>
         </div>
-    </div>
-    <div class="w-full h-fit bg-white justify-center mx-auto">
-        <div class="my-10 flex justify-center">
-            <p class="text-3xl font-bold"> 關於我 </p>
+        <ol class="ladder-msgs">
+          <li class="msg to-right" style="--i:0"><code>INVITE sip:leo@ai3.cloud</code></li>
+          <li class="msg to-left provisional" style="--i:1"><code>100 Trying</code></li>
+          <li class="msg to-left provisional" style="--i:2"><code>180 Ringing</code></li>
+          <li class="msg to-left ok" style="--i:3"><code>200 OK</code></li>
+          <li class="msg to-right" style="--i:4"><code>ACK</code></li>
+        </ol>
+        <figcaption>
+          通話已建立。<a href="#work">看看我做過的東西</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="work" class="block">
+      <h2>專案</h2>
+      <p class="block-intro">大多是工作上真的需要、找不到順手工具才動手寫的。</p>
+
+      <article class="feature">
+        <div class="feature-head">
+          <h3><a href="https://github.com/leoyu0607/Sipress">Sipress</a></h3>
+          <p class="stack">Rust　Tauri　Vue　ratatui</p>
         </div>
-        <div class="flex relative my-5 justify-center">
-            <div class="w-1/2 grid justify-end pr-10">
-                <img class="w-auto rounded-[10px] h-[400px] shadow-2xl" src="./images/leoyu_icon.png">
-                <p class="text-2xl top-4 relative w-fit mx-auto"> 游博丞 (Leo) </p>
-            </div>
-            <div class="w-1/2 flex flex-col justify-evenly">
-                <div>
-                    <p class="text-2xl">  ． 國立台北教育大學 資訊科學系 109級 (NTUE CS 109)</p>
-                </div>
-                <div>
-                    <p class="text-2xl">  ． 國北資訊研究社 16th 副社長 </p>
-                </div>
-                <div>
-                    <p class="text-2xl">  ． Skill：Python、C++、HTML、PHP、JSP、Arduino  </p>
-                </div>
-                <div>
-                    <p class="text-2xl">  ． GDSC NTUE 2021 Core Team Education </p>
-                </div>
-                <div>
-                    <p class="text-2xl">  ． 專攻：軟體開發 </p>
-                </div>
-                <div class="w-fit gap-10 flex flex-row justify-start pt-10">
-                    <a class="text-center" href="https://github.com/leoyu0607">
-                        <img class="w-[70px] h-auto" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg=="  />
-                        <p class="mt-2"> Github </p>
-                    </a>
-                    <a class="text-center" href="mailto:a18600083@gmail.com">
-                        <img class="w-[70px] h-auto" src="./images/email.png"  />
-                        <p class="mt-2"> Email </p>
-                    </a>
-                    <a class="text-center" href="https://discord.gg/pjQbK9FjNj">
-                        <img class="w-[70px] h-auto" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xOS41NCAwYzEuMzU2IDAgMi40NiAxLjEwNCAyLjQ2IDIuNDcydjIxLjUyOGwtMi41OC0yLjI4LTEuNDUyLTEuMzQ0LTEuNTM2LTEuNDI4LjYzNiAyLjIyaC0xMy42MDhjLTEuMzU2IDAtMi40Ni0xLjEwNC0yLjQ2LTIuNDcydi0xNi4yMjRjMC0xLjM2OCAxLjEwNC0yLjQ3MiAyLjQ2LTIuNDcyaDE2LjA4em0tNC42MzIgMTUuNjcyYzIuNjUyLS4wODQgMy42NzItMS44MjQgMy42NzItMS44MjQgMC0zLjg2NC0xLjcyOC02Ljk5Ni0xLjcyOC02Ljk5Ni0xLjcyOC0xLjI5Ni0zLjM3Mi0xLjI2LTMuMzcyLTEuMjZsLS4xNjguMTkyYzIuMDQuNjI0IDIuOTg4IDEuNTI0IDIuOTg4IDEuNTI0LTEuMjQ4LS42ODQtMi40NzItMS4wMi0zLjYxMi0xLjE1Mi0uODY0LS4wOTYtMS42OTItLjA3Mi0yLjQyNC4wMjRsLS4yMDQuMDI0Yy0uNDIuMDM2LTEuNDQuMTkyLTIuNzI0Ljc1Ni0uNDQ0LjIwNC0uNzA4LjM0OC0uNzA4LjM0OHMuOTk2LS45NDggMy4xNTYtMS41NzJsLS4xMi0uMTQ0cy0xLjY0NC0uMDM2LTMuMzcyIDEuMjZjMCAwLTEuNzI4IDMuMTMyLTEuNzI4IDYuOTk2IDAgMCAxLjAwOCAxLjc0IDMuNjYgMS44MjQgMCAwIC40NDQtLjU0LjgwNC0uOTk2LTEuNTI0LS40NTYtMi4xLTEuNDE2LTIuMS0xLjQxNmwuMzM2LjIwNC4wNDguMDM2LjA0Ny4wMjcuMDE0LjAwNi4wNDcuMDI3Yy4zLjE2OC42LjMuODc2LjQwOC40OTIuMTkyIDEuMDguMzg0IDEuNzY0LjUxNi45LjE2OCAxLjk1Ni4yMjggMy4xMDguMDEyLjU2NC0uMDk2IDEuMTQtLjI2NCAxLjc0LS41MTYuNDItLjE1Ni44ODgtLjM4NCAxLjM4LS43MDggMCAwLS42Ljk4NC0yLjE3MiAxLjQyOC4zNi40NTYuNzkyLjk3Mi43OTIuOTcyem0tNS41OC01LjYwNGMtLjY4NCAwLTEuMjI0LjYtMS4yMjQgMS4zMzIgMCAuNzMyLjU1MiAxLjMzMiAxLjIyNCAxLjMzMi42ODQgMCAxLjIyNC0uNiAxLjIyNC0xLjMzMi4wMTItLjczMi0uNTQtMS4zMzItMS4yMjQtMS4zMzJ6bTQuMzggMGMtLjY4NCAwLTEuMjI0LjYtMS4yMjQgMS4zMzIgMCAuNzMyLjU1MiAxLjMzMiAxLjIyNCAxLjMzMi42ODQgMCAxLjIyNC0uNiAxLjIyNC0xLjMzMiAwLS43MzItLjU0LTEuMzMyLTEuMjI0LTEuMzMyeiIvPjwvc3ZnPg=="  />
-                        <p class="mt-2"> Discord </p>
-                    </a>
-                    <a class="text-center" href="https://www.linkedin.com/in/leoyu0607/">
-                        <img class="w-[70px] h-auto" src="./images/linkedin.png"  />
-                        <p class="mt-2"> LinkedIn </p>
-                    </a>
-                </div>
-            </div>
+        <p>
+          SIP 軟交換機的壓測工具。可以扮演民眾主動撥出，也可以扮演座席先 REGISTER 再等來電自動接聽，每 20ms 送出真實的 G.711 語音封包，並依 ITU-T G.107 估算 MOS、量測掉包率與 Jitter。同一套引擎提供桌面 GUI、終端機 TUI 與 CLI 三種介面，跑完產出 HTML 報告。</p>
+        <ul class="facts">
+          <li>RFC 3261 信令，含 Digest 認證與 Session-Expires 重新協商</li>
+          <li>即時顯示 ASR、CPS 與並發數</li>
+        </ul>
+      </article>
+
+      <article class="feature">
+        <div class="feature-head">
+          <h3><a href="https://github.com/leoyu0607/sip-fax-rs">sip-fax-rs</a></h3>
+          <p class="stack">Rust　Svelte　SQLite / PostgreSQL / MSSQL</p>
         </div>
-    </div> 
-    <hr class="mt-10">
-    <div class="my-10 flex justify-center">
-        <p class="text-3xl font-bold"> Github Streak </p>
-    </div>
-    <div class="relative w-full flex justify-center h-fit bg-white z-50">
-        <a class="block h-full w-full z-50" href="https://github.com/leoyu0607" target="_blank">
-            <object class="pointer-events-none lg:w-1/2 md:w-full mx-auto" type="image/svg+xml" data="https://github-readme-streak-stats.herokuapp.com/?user=leoyu0607"> </object>
-        </a>
-    </div>
+        <p>
+          用 Rust 從頭寫的 SIP 傳真伺服器。從 AudioCodes、Sonus 等 VoIP 閘道器接收 T.38 傳真，閘道不支援時退回 G.711。T.30、T.4/T.6 解碼到 TIFF / PDF 輸出都是純 Rust 實作，打包成單一靜態執行檔，丟上 RHEL 9/10 解壓就能跑。</p>
+        <ul class="facts">
+          <li>已用實體 AudioCodes 閘道驗證多頁 T.38 收件</li>
+          <li>內建網頁管理介面，傳真可轉寄 Email、Webhook 或資料夾</li>
+        </ul>
+      </article>
+
+      <ul class="minor">
+        <li>
+          <a href="https://github.com/leoyu0607/CVE_Daily_Report">CVE_Daily_Report</a>
+          <p>每天早上八點從 NVD 抓前一天的 High / Critical CVE，用 Telegram 推給我。跑在 Cloudflare Workers。</p>
+        </li>
+        <li>
+          <a href="https://github.com/leoyu0607/Openvidu-record-sync">Openvidu-record-sync</a>
+          <p>把 OpenVidu 主節點的錄影檔同步到 CRM Gateway。Rust 寫的常駐服務。</p>
+        </li>
+        <li>
+          <a href="https://github.com/leoyu0607/mblc">mblc</a>
+          <p>管理自己書櫃的 LINE 聊天機器人。</p>
+        </li>
+        <li>
+          <a href="https://github.com/leoyu0607/Tool-sh">Tool-sh</a>
+          <p>維運時累積的 Shell 小工具。</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills" class="block">
+      <h2>專長</h2>
+      <dl class="skills">
+        <div>
+          <dt>語音與電信</dt>
+          <dd>SIP (RFC 3261)、RTP / G.711、T.38 傳真、ACD 客服系統、OpenVidu</dd>
+        </div>
+        <div>
+          <dt>系統維運</dt>
+          <dd>RHEL、Shell、Tomcat、Nginx、Docker、Cloudflare Workers</dd>
+        </div>
+        <div>
+          <dt>資安合規</dt>
+          <dd>弱點掃描與修補、GCB 政府組態基準、CVE 追蹤</dd>
+        </div>
+        <div>
+          <dt>程式開發</dt>
+          <dd>Rust、Go、TypeScript、Vue、Svelte、Python、C++</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="path" class="block">
+      <h2>經歷</h2>
+      <ol class="timeline">
+        <li>
+          <time>2024.03 至今</time>
+          <div>
+            <h3>Ai3 人工智能，高級系統工程師</h3>
+            <p>負責客服中心語音系統的建置與維運，處理 SIP 通話異常、主機弱點修補與交接文件。</p>
+          </div>
+        </li>
+        <li>
+          <time>2020 – 2024</time>
+          <div>
+            <h3>國立臺北教育大學，資訊科學系</h3>
+            <p>109 級。在學期間擔任國北資訊研究社第 16 屆副社長。</p>
+          </div>
+        </li>
+        <li>
+          <time>2021</time>
+          <div>
+            <h3>GDSC NTUE，Core Team（教學組）</h3>
+            <p>Google Developer Student Clubs 臺北教育大學分部，負責教學組。</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="contact" class="block contact">
+      <h2>聯絡</h2>
+      <p class="block-intro">工作機會、SIP 疑難雜症，或只是想聊聊 Rust，都歡迎來信。</p>
+      <a class="mail" href="mailto:a18600083@gmail.com">a18600083@gmail.com</a>
+      <ul class="links">
+        <li><a href="https://github.com/leoyu0607">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/leoyu0607/">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>BYE <span>200 OK</span></p>
+  </footer>
 </body>
 </html>
